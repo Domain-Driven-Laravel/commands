@@ -1,0 +1,27 @@
+{
+    "name": "mennovanhout/laravel-domain-driven-commands",
+    "description": "This package will make artisan commands available but in a domain driven folder structure",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Menno van Hout",
+            "email": "info@mennovanhout.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MennoVanHout\\LaravelDomainDrivenCommands\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MennoVanHout\\LaravelDomainDrivenCommands\\Providers\\DomainDrivenCommandsProvider"
+            ]
+        }
+    }
+}
