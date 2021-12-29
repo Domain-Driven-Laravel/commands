@@ -4,6 +4,8 @@ namespace MennoVanHout\LaravelDomainDrivenCommands\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use MennoVanHout\LaravelDomainDrivenCommands\Console\Commands\ActionMakeCommand;
+use MennoVanHout\LaravelDomainDrivenCommands\Console\Commands\DataTransferObjectMakeCommand;
 use MennoVanHout\LaravelDomainDrivenCommands\Console\Commands\ModelMakeCommand;
 
 class DomainDrivenCommandsProvider extends ServiceProvider implements DeferrableProvider
@@ -25,7 +27,9 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
 
         $this->commands(
             [
-                ModelMakeCommand::class
+                ModelMakeCommand::class,
+                ActionMakeCommand::class,
+                DataTransferObjectMakeCommand::class,
             ]
         );
     }
@@ -58,7 +62,9 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
     public function provides(): array
     {
         return [
-            'command.make.model'
+            'command.make.model',
+            'command.make.action',
+            'command.make.dto',
         ];
     }
 }
