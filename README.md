@@ -20,6 +20,7 @@ By default, we are following the domain driven approach of my choice. But to mak
 ```bash
 sail artisan vendor:publish --tag=ddd-commands
 ```
+[Default config](https://github.com/mennovanhout/laravel-domain-driven-commands/blob/main/src/config/ddd-commands.php)
 
 _Config explanation is added inside the published ddd-commands.php file_
 
