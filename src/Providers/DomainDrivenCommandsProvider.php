@@ -4,7 +4,6 @@ namespace MennoVanHout\LaravelDomainDrivenCommands\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Filesystem\Filesystem;
 use MennoVanHout\LaravelDomainDrivenCommands\Console\Commands\ModelMakeCommand;
 
 class DomainDrivenCommandsProvider extends ServiceProvider implements DeferrableProvider
@@ -37,9 +36,6 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
         if (!$this->app->runningInConsole()) {
             return;
         }
-
-        //echo get_class($this->app);
-        //echo $a_ns = substr(get_class($this->app), 0, strrpos(get_class($this->app), '\\'));
 
         $this->app->extend('command.model.make', function (\Illuminate\Foundation\Console\ModelMakeCommand $command) {
             //$command->files

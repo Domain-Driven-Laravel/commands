@@ -4,9 +4,12 @@ namespace MennoVanHout\LaravelDomainDrivenCommands\Console\Commands;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Console\ModelMakeCommand as Command;
+use MennoVanHout\LaravelDomainDrivenCommands\Console\Traits\DomainCommandTrait;
 
 class ModelMakeCommand extends Command
 {
+    use DomainCommandTrait;
+
     protected $name = 'make:model';
     protected $signature = 'make:model {--force} {domain} {name} {--api} {--pivot} {--all} {--factory} {--seed} {--migration} {--controller} {--policy} {--resource}';
 
@@ -19,6 +22,6 @@ class ModelMakeCommand extends Command
     {
         $domain = $this->argument('domain');
 
-        return "{$rootNamespace}\\..\\Domain\\{$domain}\\Models";
+        return "{$rootNamespace}\\{$domain}\\Models";
     }
 }
