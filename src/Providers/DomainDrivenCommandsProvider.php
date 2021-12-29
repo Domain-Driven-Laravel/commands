@@ -15,6 +15,10 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../config/ddd-commands.php' => config_path('ddd-commands.php'),
+        ], 'ddd-commands');
+
         if (!$this->app->runningInConsole()) {
             return;
         }
@@ -33,12 +37,15 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
      */
     public function register()
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/ddd-commands.php', 'ddd-commands'
+        );
+
         if (!$this->app->runningInConsole()) {
             return;
         }
 
         $this->app->extend('command.model.make', function (\Illuminate\Foundation\Console\ModelMakeCommand $command) {
-            //$command->files
             return new ModelMakeCommand;
         });
     }

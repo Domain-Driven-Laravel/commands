@@ -10,13 +10,13 @@ trait DomainCommandTrait
 
     protected function rootNamespace(): string
     {
-        return 'Domain';
+        return config('ddd-commands.domain.root_namespace');
     }
 
     protected function getPath($name): string
     {
         $name = Str::replaceFirst($this->rootNamespace(), '', $name);
 
-        return 'src/Domain/'.str_replace('\\', '/', $name).'.php';
+        return config('ddd-commands.domain.path').str_replace('\\', '/', $name).'.php';
     }
 }
