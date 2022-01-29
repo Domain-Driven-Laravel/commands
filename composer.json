@@ -1,6 +1,7 @@
 {
     "name": "domain-driven-laravel/commands",
     "description": "This package will make artisan commands available but in a domain driven folder structure",
+    "version": "3.1",
     "license": "MIT",
     "authors": [
         {
@@ -14,13 +15,13 @@
     },
     "autoload": {
         "psr-4": {
-            "MennoVanHout\\LaravelDomainDrivenCommands\\": "src/"
+            "DomainDrivenLaravel\\Commands\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "MennoVanHout\\LaravelDomainDrivenCommands\\Providers\\DomainDrivenCommandsProvider"
+                "DomainDrivenLaravel\\Commands\\Providers\\DomainDrivenCommandsProvider"
             ]
         }
     }

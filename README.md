@@ -27,8 +27,9 @@ _Config explanation is added inside the published ddd-commands.php file_
 ## Commands:
 If you are not using sail please replace "sail" with "php" in commands below
 
-| Command                                    | Default output path                       | Documentation                                                  |
-|--------------------------------------------|-------------------------------------------|----------------------------------------------------------------|
-| `sail artisan make:model {domain} {name}`  | `src/Domain/{domain}/Models`              | [Laravel Documentation](https://laravel.com/docs/8.x/eloquent) |
-| `sail artisan make:action {domain} {name}` | `src/Domain/{domain}/Actions`             | (None yet)                                                     |
-| `sail artisan make:dto {domain} {name}`    | `src/Domain/{domain}/DataTransferObjects` | (None yet)                                                     |
+| Command                                    | Default output path                       | Documentation                                                              |
+|--------------------------------------------|-------------------------------------------|----------------------------------------------------------------------------|
+| `sail artisan make:model {domain} {name}`  | `src/Domain/{domain}/Models`              | [Laravel Documentation](https://laravel.com/docs/8.x/eloquent)             |
+| `sail artisan make:job {domain} {name}`    | `src/Domain/{domain}/Jobs`                | [Laravel Documentation](https://laravel.com/docs/8.x/queues#creating-jobs) |
+| `sail artisan make:action {domain} {name}` | `src/Domain/{domain}/Actions`             | (None yet)                                                                 |
+| `sail artisan make:dto {domain} {name}`    | `src/Domain/{domain}/DataTransferObjects` | (None yet)                                                                 |

@@ -1,10 +1,10 @@
 <?php
 
-namespace MennoVanHout\LaravelDomainDrivenCommands\Console\Commands;
+namespace DomainDrivenLaravel\Commands\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Filesystem\Filesystem;
-use MennoVanHout\LaravelDomainDrivenCommands\Console\Traits\DomainCommandTrait;
+use DomainDrivenLaravel\Commands\Console\Traits\DomainCommandTrait;
 
 class ActionMakeCommand extends GeneratorCommand
 {

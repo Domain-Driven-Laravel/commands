@@ -3,15 +3,15 @@
 namespace DomainDrivenLaravel\Commands\Console\Commands;
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Foundation\Console\ModelMakeCommand as Command;
+use Illuminate\Foundation\Console\JobMakeCommand as Command;
 use DomainDrivenLaravel\Commands\Console\Traits\DomainCommandTrait;
 
-class ModelMakeCommand extends Command
+class JobMakeCommand extends Command
 {
     use DomainCommandTrait;
 
     protected $name = 'make:model';
-    protected $signature = 'make:model {--force} {domain} {name} {--api} {--pivot} {--all} {--factory} {--seed} {--migration} {--controller} {--policy} {--resource}';
+    protected $signature = 'make:job {domain} {name} {--sync}';
 
     public function __construct()
     {
@@ -22,6 +22,6 @@ class ModelMakeCommand extends Command
     {
         $domain = $this->argument('domain');
 
-        return "{$rootNamespace}\\{$domain}\\Models";
+        return "{$rootNamespace}\\{$domain}\\Jobs";
     }
 }

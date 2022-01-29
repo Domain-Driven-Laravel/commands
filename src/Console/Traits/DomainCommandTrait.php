@@ -1,6 +1,6 @@
 <?php
 
-namespace MennoVanHout\LaravelDomainDrivenCommands\Console\Traits;
+namespace DomainDrivenLaravel\Commands\Console\Traits;
 
 use Illuminate\Support\Str;
 
