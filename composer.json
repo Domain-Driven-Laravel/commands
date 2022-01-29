@@ -1,5 +1,5 @@
 {
-    "name": "mennovanhout/laravel-domain-driven-commands",
+    "name": "domain-driven-laravel/commands",
     "description": "This package will make artisan commands available but in a domain driven folder structure",
     "license": "MIT",
     "authors": [
