@@ -1,7 +1,7 @@
 {
     "name": "domain-driven-laravel/commands",
     "description": "This package will make artisan commands available but in a domain driven folder structure",
-    "version": "3.1",
+    "version": "0.3.1",
     "license": "MIT",
     "authors": [
         {
