@@ -25,10 +25,8 @@ class ActionMakeCommand extends GeneratorCommand
         return __DIR__ . '/../../stubs/action.stub';
     }
 
-    protected function getDefaultNamespace($rootNamespace): string
+    protected function subdirectoryName(): string
     {
-        $domain = $this->argument('domain');
-
-        return "{$rootNamespace}\\{$domain}\\Actions";
+        return 'Actions';
     }
 }

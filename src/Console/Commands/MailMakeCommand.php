@@ -2,16 +2,16 @@
 
 namespace DomainDrivenLaravel\Commands\Console\Commands;
 
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Foundation\Console\JobMakeCommand as Command;
 use DomainDrivenLaravel\Commands\Console\Traits\DomainCommandTrait;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Foundation\Console\MailMakeCommand as Command;
 
-class JobMakeCommand extends Command
+class MailMakeCommand extends Command
 {
     use DomainCommandTrait;
 
-    protected $name = 'make:model';
-    protected $signature = 'make:job {domain} {name} {--sync}';
+    protected $name = 'make:mail';
+    protected $signature = 'make:mail {domain} {name} {--markdown}';
 
     public function __construct()
     {
@@ -20,6 +20,6 @@ class JobMakeCommand extends Command
 
     protected function subdirectoryName(): string
     {
-        return 'Jobs';
+        return 'Mails';
     }
 }

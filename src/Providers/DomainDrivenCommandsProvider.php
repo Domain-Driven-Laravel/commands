@@ -3,6 +3,7 @@
 namespace DomainDrivenLaravel\Commands\Providers;
 
 use DomainDrivenLaravel\Commands\Console\Commands\JobMakeCommand;
+use DomainDrivenLaravel\Commands\Console\Commands\MailMakeCommand;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use DomainDrivenLaravel\Commands\Console\Commands\ActionMakeCommand;
@@ -30,6 +31,7 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
             [
                 ModelMakeCommand::class,
                 JobMakeCommand::class,
+                MailMakeCommand::class,
                 ActionMakeCommand::class,
                 DataTransferObjectMakeCommand::class,
             ]
@@ -58,6 +60,10 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
         $this->app->extend('command.job.make', function (\Illuminate\Foundation\Console\JobMakeCommand $command) {
             return new JobMakeCommand;
         });
+
+        $this->app->extend('command.mail.make', function (\Illuminate\Foundation\Console\MailMakeCommand $command) {
+            return new MailMakeCommand;
+        });
     }
 
     /**
@@ -70,6 +76,7 @@ class DomainDrivenCommandsProvider extends ServiceProvider implements Deferrable
         return [
             'command.make.model',
             'command.make.job',
+            'command.make.mail',
             'command.make.action',
             'command.make.dto',
         ];

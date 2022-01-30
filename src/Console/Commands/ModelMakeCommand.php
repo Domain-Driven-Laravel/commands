@@ -18,10 +18,8 @@ class ModelMakeCommand extends Command
         parent::__construct(new Filesystem());
     }
 
-    protected function getDefaultNamespace($rootNamespace): string
+    protected function subdirectoryName(): string
     {
-        $domain = $this->argument('domain');
-
-        return "{$rootNamespace}\\{$domain}\\Models";
+        return 'Models';
     }
 }
