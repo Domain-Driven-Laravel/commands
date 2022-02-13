@@ -8,5 +8,9 @@ return [
     'domain' => [
         'root_namespace' => 'Domain',
         'path' => 'src/Domain/'
+    ],
+    'app_layer' => [
+        'root_namespace' => 'App',
+        'path' => 'src/App/'
     ]
 ];
